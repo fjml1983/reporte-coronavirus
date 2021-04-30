@@ -29,4 +29,5 @@ Enlaces referidos en los respectivos videos y recursos:
 * **VIDEO:** https://www.youtube.com/watch?v=lQG9ht5Y0bM
 * https://css-tricks.com/creating-non-rectangular-headers/
 * https://pixabay.com/illustrations/covid-19-virus-coronavirus-pandemic-4964090/
+* https://css-tricks.com/almanac/properties/a/animation/
 * https://jsfiddle.net/fjml1983/8s2yu543/22/
