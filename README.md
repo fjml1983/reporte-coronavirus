@@ -1,6 +1,7 @@
 # Reporte-Coronavirus
 Proyecto de caso de estudio realizado en el [ITSUR](http://www.itsur.edu.mx/home.php) para mostrar información sobre el coronavirus, incluyendo consumo de servicios Web Api Rest, animación CSS y javascript, visualización de datos y aspectos de seguridad.
 
+Live-demo: https://main.d1q51o3oi5c14h.amplifyapp.com/
 
 Enlaces referidos en los respectivos videos y recursos:
 
