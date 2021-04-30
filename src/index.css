@@ -1,0 +1,199 @@
+/*My CSS Grid Responsive Framework*/
+
+/*TIPOGRAFIA*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/*----------*/
+
+/* Palette color codes */
+/* Palette URL: http://paletton.com/#uid=43t0u0kcPNA2XZT7+V3hdDMlauP */
+:root{
+
+    --color-primary-0: #86BBD8;	/* Main Primary color */
+    --color-primary-1: #E6F4FC;
+    --color-primary-2: #B5DAEE;
+    --color-primary-3: #5C9ABB;
+    --color-primary-4: #3A7A9C;
+
+    --color-secondary-1-0: #FFE399;	/* Main Secondary color (1) */
+    --color-secondary-1-1: #FFF9E8;
+    --color-secondary-1-2: #FFEEBF;
+    --color-secondary-1-3: #FFDA76;
+    --color-secondary-1-4: #F6C953;
+
+    --color-secondary-2-0: #FFB099;	/* Main Secondary color (2) */
+    --color-secondary-2-1: #FFEDE8;
+    --color-secondary-2-2: #FFCEBF;
+    --color-secondary-2-3: #FF9576;
+    --color-secondary-2-4: #F67853;
+
+    --color-complement-0: #FFD099;	/* Main Complement color */
+    --color-complement-1: #FFF4E8;
+    --color-complement-2: #FFE2BF;
+    --color-complement-3: #FFC076;
+    --color-complement-4: #F6AB53;
+
+
+}
+
+/*RESPONSIVIDAD*/
+.row {
+	display: grid;
+	gap: 10px;
+}
+
+/* Grande - Computadoras y TV */
+.col-1 { grid-template-columns: repeat(1, 1fr); }
+.col-2 { grid-template-columns: repeat(2, 1fr); }
+.col-3 { grid-template-columns: repeat(3, 1fr); }
+.col-4 { grid-template-columns: repeat(4, 1fr); }
+.col-5 { grid-template-columns: repeat(5, 1fr); }
+.col-6 { grid-template-columns: repeat(6, 1fr); }
+.col-7 { grid-template-columns: repeat(7, 1fr); }
+.col-8 { grid-template-columns: repeat(8, 1fr); }
+.col-9 { grid-template-columns: repeat(9, 1fr); }
+.col-10 { grid-template-columns: repeat(10, 1fr); }
+.col-11 { grid-template-columns: repeat(11, 1fr); }
+.col-12 { grid-template-columns: repeat(12, 1fr); }
+
+/* Mediano - Tablets */
+@media screen and (max-width: 992px) {
+    .col-md-1 { grid-template-columns: repeat(1, 1fr); }
+    .col-md-2 { grid-template-columns: repeat(2, 1fr); }
+    .col-md-3 { grid-template-columns: repeat(3, 1fr); }
+    .col-md-4 { grid-template-columns: repeat(4, 1fr); }
+    .col-md-5 { grid-template-columns: repeat(5, 1fr); }
+    .col-md-6 { grid-template-columns: repeat(6, 1fr); }
+    .col-md-7 { grid-template-columns: repeat(7, 1fr); }
+    .col-md-8 { grid-template-columns: repeat(8, 1fr); }
+    .col-md-9 { grid-template-columns: repeat(9, 1fr); }
+    .col-md-10 { grid-template-columns: repeat(10, 1fr); }
+    .col-md-11 { grid-template-columns: repeat(11, 1fr); }
+    .col-md-12 { grid-template-columns: repeat(12, 1fr); }    
+}
+
+/* Peque - Celulares */
+@media screen and (max-width: 576px) {
+    .col-sm-1 { grid-template-columns: repeat(1, 1fr); }
+    .col-sm-2 { grid-template-columns: repeat(2, 1fr); }
+    .col-sm-3 { grid-template-columns: repeat(3, 1fr); }
+    .col-sm-4 { grid-template-columns: repeat(4, 1fr); }
+    .col-sm-5 { grid-template-columns: repeat(5, 1fr); }
+    .col-sm-6 { grid-template-columns: repeat(6, 1fr); }
+    .col-sm-7 { grid-template-columns: repeat(7, 1fr); }
+    .col-sm-8 { grid-template-columns: repeat(8, 1fr); }
+    .col-sm-9 { grid-template-columns: repeat(9, 1fr); }
+    .col-sm-10 { grid-template-columns: repeat(10, 1fr); }
+    .col-sm-11 { grid-template-columns: repeat(11, 1fr); }
+    .col-sm-12 { grid-template-columns: repeat(12, 1fr); }    
+}
+
+body > header {
+    background-image: linear-gradient(var(--color-primary-0),var(--color-primary-4) );
+    padding: 32px 0 32px 0;
+    margin-bottom: 32px;
+    text-align: center;
+    color: var(--color-complement-1);
+    width: 100%;
+    border-bottom-left-radius: 50% 20%;
+    border-bottom-right-radius: 50% 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+.virus{
+    min-width: 128px;
+    min-height: 128px;
+    background-image: url(coronavirus.png);
+    background-size: contain;
+    position: fixed;
+
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    /*animation-fill-mode: forwards;*/
+    z-index: 10000;
+}
+
+body > header h1, p {
+    z-index: 10001;
+}
+
+
+@keyframes spin {
+    from{
+        min-width: 0px;
+        min-height: 0px;
+        transform: rotate(0deg);
+        left: 0px;
+    }
+    to{
+        transform: rotate(360deg);
+        min-width: 128px;
+        min-height: 128px;        
+        left: 100%;        
+    }
+}
+
+.virus-left{
+    top: 0px;
+    left: -64px;
+}
+
+.virus-right{
+    top: 0px;
+    left: calc(100% - 64px);
+}
+
+/* Mediano - Tablets */
+@media screen and (max-width: 576px) {
+
+    body > header {
+        position: fixed;
+        margin-top: -300px;
+    }
+
+    body > main {
+        margin-top: 300px;
+    }
+
+    .virus-left{
+        position: static;
+        max-width: 64px;
+        margin: 0 auto;
+    }
+
+    .virus-right{
+        display: none;
+    }
+
+}
+
+article { 
+    border: solid 1px red; padding: 6px;
+    background-color: var(--color-primary-4);
+    border-radius: 1em;
+    box-shadow: 5px 5px 5px var(--color-primary-3);
+}
+
+article header{
+    color: var(--color-complement-0);
+}
+
+article main{
+    color:var(--color-secondary-2-1);    
+}
+
+.container{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
