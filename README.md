@@ -24,9 +24,25 @@ https://medium.com/@lmleon19/funciones-de-jquery-pero-sin-jquery-solo-en-js-vani
 https://jsonformatter.org/
 https://css-tricks.com/animating-number-counters/
 
-
 Caso de estudio (parte 4) Animación con CSS animation
 **VIDEO:** https://www.youtube.com/watch?v=lQG9ht5Y0bM
 https://css-tricks.com/creating-non-rectangular-headers/
 https://pixabay.com/illustrations/covid-19-virus-coronavirus-pandemic-4964090/
 https://jsfiddle.net/fjml1983/8s2yu543/22/
+
+Caso de estudio (parte 5) Animación con RequestAnimationFrame desde Javascript
+**VIDEO:** https://www.youtube.com/watch?v=HdGT5E6gebo
+https://css-tricks.com/using-requestanimationframe/
+https://jsfiddle.net/fjml1983/qngr3sv7/11/
+https://jsfiddle.net/fjml1983/j5t98zba/19/
+https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
+
+Caso de estudio (parte 6) Reportando información con highcharts
+**VIDEO:** https://www.youtube.com/watch?v=ACq7wbZ0o1g
+https://www.highcharts.com
+https://www.chartjs.org 
+https://covid-api.mmediagroup.fr/v1/cases 
+https://jsonformatter.org
+
+
+

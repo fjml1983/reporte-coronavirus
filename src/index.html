@@ -9,8 +9,8 @@
 <body>
     <header>
         <div class="virus virus-left"></div>
-        <h1>Reporte Coronavirus</h1>
-        <p>Una fuente rápida de información sobre el COVID-19</p>
+        <h1 id="titulo-principal" >Reporte Coronavirus</h1>
+        <p id="subtitulo" >Una fuente rápida de información sobre el COVID-19</p>
         <div class="virus virus-right"></div>
     </header>
 
@@ -20,6 +20,9 @@
                 <h2>A la fecha existen <span id="global-confirmados" ></span> de casos confirmados de Coronavirus alrededor del mundo.</h2>
             </header>                
             <!--Colocar aquí mapa o grafico de reporte-->
+            <figure class="highcharts-figure">
+                <div id="grafico"></div>
+            </figure>            
             <main>
                 <p>Desde la última semana, se ha incrementado #,### casos en el mundo, o un #%</p>
             </main>
@@ -44,6 +47,7 @@
         </article>
     </main>
 
+    <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="index.js"></script>
 </body>
 </html>
