@@ -95,7 +95,7 @@
 
 body > header {
     background-image: linear-gradient(var(--color-primary-0),var(--color-primary-4) );
-    padding: 32px 0 32px 0;
+    padding: 24px 0 24px 0;
     margin-bottom: 32px;
     text-align: center;
     color: var(--color-complement-1);
@@ -111,14 +111,8 @@ body > header {
     min-height: 128px;
     background-image: url(coronavirus.png);
     background-size: contain;
-    position: fixed;
-
-    animation-name: spin;
-    animation-duration: 5000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-direction: alternate;
-    /*animation-fill-mode: forwards;*/
+    position: absolute;
+    top: 0px;
     z-index: 10000;
 }
 
@@ -126,8 +120,7 @@ body > header h1, p {
     z-index: 10001;
 }
 
-
-@keyframes spin {
+@keyframes spin-move-left {
     from{
         min-width: 0px;
         min-height: 0px;
@@ -138,36 +131,72 @@ body > header h1, p {
         transform: rotate(360deg);
         min-width: 128px;
         min-height: 128px;        
-        left: 100%;        
+        left: calc(100% - 128px);;        
+    }
+}
+
+@keyframes spin-move-right {
+    from{
+        transform: rotate(360deg);
+        min-width: 128px;
+        min-height: 128px;        
+        left: calc(100% - 128px);
+    }
+    to{
+        min-width: 0px;
+        min-height: 0px;
+        transform: rotate(0deg);
+        left: 0px;  
+    }
+}
+
+@keyframes spin {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);            
     }
 }
 
 .virus-left{
-    top: 0px;
-    left: -64px;
+    animation-name: spin-move-left;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
 }
 
 .virus-right{
-    top: 0px;
-    left: calc(100% - 64px);
+    animation-name: spin-move-right;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
 }
 
 /* Mediano - Tablets */
 @media screen and (max-width: 576px) {
 
     body > header {
-        position: fixed;
-        margin-top: -300px;
+        position: relative;
+        margin-top: 0px;
     }
 
     body > main {
-        margin-top: 300px;
+        margin-top: 32px;
     }
 
     .virus-left{
-        position: static;
-        max-width: 64px;
+        position: relative;
         margin: 0 auto;
+        min-width: 64px;
+        min-height: 64px;        
+        animation-name: spin;
+        animation-duration: 5000ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-direction: alternate;
     }
 
     .virus-right{
@@ -205,8 +234,7 @@ article main{
     height: 400px; 
 }
 
-.highcharts-figure, .highcharts-data-table table {
-    min-width: 310px; 
+.highcharts-figure, .highcharts-data-table table { 
     max-width: 800px;
     margin: 1em auto;
 }

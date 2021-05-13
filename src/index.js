@@ -5,15 +5,17 @@ var mexicoActivos = document.querySelector('#mexico-activos');
 var tituloPrincipal = document.querySelector('#titulo-principal');
 var subtitulo = document.querySelector('#subtitulo');
 
+
+var paises = []; //también se puede especificar los valores mediante una variable
 var datosGrafico = {
   chart: {
       type: 'column'
   },
   title: {
-      text: 'Datos COVID-19'
+      text: 'Casos COVID-19 en el mundo'
   },
   xAxis: {
-      categories: []//['México', 'E.U.', 'Canada']
+      categories: paises//['México', 'E.U.', 'Canada']
   },
   yAxis: {
       min: 0,
@@ -82,7 +84,7 @@ function updateCovidData(){
                 console.log(json[key].All.recovered);
                 console.log(json[key].All.deaths);
                 if(json[key].All.deaths > 50000){
-                  datosGrafico.xAxis.categories.push(json[key].All.country);
+                  paises.push(key);
                   datosGrafico.series[0].data.push(json[key].All.confirmed-json[key].All.recovered-json[key].All.deaths);
                   datosGrafico.series[1].data.push(json[key].All.recovered);
                   datosGrafico.series[2].data.push(json[key].All.deaths);
@@ -117,7 +119,7 @@ function animateValue(obj, start, end, duration) {
       const progress = Math.min((timestamp - startTimestamp) / duration,1);
       const size = Math.ceil(progress * (endSize - startSize) + startSize);
 
-      const customStyle = {'font-size': size+unit, 'color': 'blue'};
+      const customStyle = {'font-size': size+unit};
       Object.assign(obj.style,customStyle);
 
       if (progress < 1) {
