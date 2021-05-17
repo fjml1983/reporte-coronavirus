@@ -5,6 +5,118 @@ var mexicoActivos = document.querySelector('#mexico-activos');
 var tituloPrincipal = document.querySelector('#titulo-principal');
 var subtitulo = document.querySelector('#subtitulo');
 
+var estadosMXcodes = {
+  Aguascalientes:'mx-ag',
+  'Baja California':'mx-bc',
+  'Baja California Sur':'mx-bs',
+  Campeche:'mx-cm',
+  Chiapas:'mx-cs',
+  Chihuahua:'mx-ch',
+  'Ciudad de Mexico':'mx-df',
+  Coahuila:'mx-co',
+  Colima:'mx-cl',
+  Durango:'mx-dg',
+  Guanajuato:'mx-gj',
+  Guerrero:'mx-gr',
+  Hidalgo:'mx-hg',
+  Jalisco:'mx-ja',
+  Mexico:'mx-mx',
+  Michoacan:'mx-mi',
+  Morelos:'mx-mo',
+  Nayarit:'mx-na',
+  'Nuevo Leon':'mx-nl',
+  Oaxaca:'mx-oa',
+  Puebla:'mx-pu',
+  Queretaro:'mx-qt',
+  'Quintana Roo':'mx-qr',
+  'San Luis Potosi':'mx-sl',
+  Sinaloa:'mx-si',
+  Sonora:'mx-so',
+  Tabasco:'mx-tb',
+  Tamaulipas:'mx-tm',
+  Tlaxcala:'mx-tl',
+  Veracruz:'mx-ve',
+  Yucatan:'mx-yu',
+  Zacatecas:'mx-za'
+};
+
+var dataCovidMexico = [
+  /*
+    ['mx-3622', 0],
+    ['mx-bc', 1],
+    ['mx-bs', 2],
+    ['mx-so', 3],
+    ['mx-cl', 4],
+    ['mx-na', 5],
+    ['mx-cm', 6],
+    ['mx-qr', 7],
+    ['mx-mx', 8],
+    ['mx-mo', 9],
+    ['mx-df', 10],
+    ['mx-qt', 11],
+    ['mx-tb', 12],
+    ['mx-cs', 13],
+    ['mx-nl', 14],
+    ['mx-si', 15],
+    ['mx-ch', 16],
+    ['mx-ve', 17],
+    ['mx-za', 18],
+    ['mx-ag', 19],
+    ['mx-ja', 20],
+    ['mx-mi', 21],
+    ['mx-oa', 22],
+    ['mx-pu', 23],
+    ['mx-gr', 24],
+    ['mx-tl', 25],
+    ['mx-tm', 26],
+    ['mx-co', 27],
+    ['mx-yu', 28],
+    ['mx-dg', 29],
+    ['mx-gj', 30],
+    ['mx-sl', 31],
+    ['mx-hg', 32]
+*/
+];
+var configMapaMexico = {
+  chart: {
+      map: 'countries/mx/mx-all'
+  },
+
+  title: {
+      text: 'Casos confirmados en México'
+  },
+
+  subtitle: {
+      text: 'Mapa origen: <a href="http://code.highcharts.com/mapdata/countries/mx/mx-all.js">Mexico</a>'
+  },
+
+  mapNavigation: {
+      enabled: true,
+      buttonOptions: {
+          verticalAlign: 'bottom'
+      }
+  },
+
+  colorAxis: {
+      min: 0,
+      minColor: '#FFFFFF',
+      maxColor: '#FF6347'
+  },
+
+  series: [{
+      data: dataCovidMexico,
+      name: 'Casos COVID-19',
+      states: {
+          hover: {
+              color: '#F08080'
+          }
+      },
+      dataLabels: {
+          enabled: true,
+          format: '{point.name}'
+      }
+  }]
+};
 
 var paises = []; //también se puede especificar los valores mediante una variable
 var datosGrafico = {
@@ -48,6 +160,7 @@ var datosGrafico = {
 document.addEventListener('DOMContentLoaded', function () {
     console.log("¡Estamos en vivo!");
     updateCovidData();
+    updateCovidMexicoMapData();
 
     animateText(tituloPrincipal,1,32,"pt",1000);
     animateText(subtitulo,1,18,"pt",1000);
@@ -60,8 +173,8 @@ function updateCovidData(){
     fetch(url).then(function(response){
         response.json().then(function(json){
           
-            console.log(json);
-            console.log(json.Global.All.confirmed);
+            //console.log(json);
+            //console.log(json.Global.All.confirmed);
             //globalConfirmados.textContent = json.Global.All.confirmed;
             //globalMuertos.textContent = json.Global.All.deaths;
             //mexicoActivos.textContent = json.Mexico.All.confirmed - json.Mexico.All.recovered;           
@@ -78,11 +191,11 @@ function updateCovidData(){
 
             for(var key in json){
               if(json.hasOwnProperty(key)){
-                console.log(json[key]);
+               /* console.log(json[key]);
                 console.log(json[key].All.country);
                 console.log(json[key].All.confirmed);
                 console.log(json[key].All.recovered);
-                console.log(json[key].All.deaths);
+                console.log(json[key].All.deaths);*/
                 if(json[key].All.deaths > 50000){
                   paises.push(key);
                   datosGrafico.series[0].data.push(json[key].All.confirmed-json[key].All.recovered-json[key].All.deaths);
@@ -96,6 +209,27 @@ function updateCovidData(){
         })
     });
 
+}
+
+function updateCovidMexicoMapData(){
+  var url="https://covid-api.mmediagroup.fr/v1/cases?country=Mexico";
+
+  fetch(url).then(function(response){
+      response.json().then(function(json){
+      console.log(json);   
+      
+      //CARGAR DATOS DE MEXICO 
+      for(var key in json){
+        if(json.hasOwnProperty(key)){
+           if(typeof estadosMXcodes[key] !== "undefined" ){
+            dataCovidMexico.push([estadosMXcodes[key], json[key].confirmed]);
+           }  
+        }
+      }
+
+      Highcharts.mapChart('container-map-mx', configMapaMexico);      
+    });
+  });
 }
 
 function animateValue(obj, start, end, duration) {
@@ -129,4 +263,3 @@ function animateValue(obj, start, end, duration) {
 
     window.requestAnimationFrame(stepAnimateText);
   }
-
