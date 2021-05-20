@@ -4,6 +4,9 @@ var globalMuertos = document.querySelector('#global-muertos');
 var mexicoActivos = document.querySelector('#mexico-activos');
 var tituloPrincipal = document.querySelector('#titulo-principal');
 var subtitulo = document.querySelector('#subtitulo');
+var btnEnviar = document.querySelector('#btnEnviar');
+var txtEmail = document.querySelector('#email');
+var txtMensaje = document.querySelector('#mensaje');
 
 var estadosMXcodes = {
   Aguascalientes:'mx-ag',
@@ -166,6 +169,48 @@ document.addEventListener('DOMContentLoaded', function () {
     animateText(subtitulo,1,18,"pt",1000);
 });
 
+btnEnviar.addEventListener('click', async function(event){
+
+  //VALIDACIÓN
+  //https://developer.mozilla.org/es/docs/Learn/Forms/Form_validation
+  if (!email.validity.valid) {
+    alert("¡Se esperaba una dirección de correo electrónico!");
+    return;
+  }
+
+  if (!mensaje.validity.valid) {
+    alert("¡Cuéntanos algo, no dejes el mensaje vacío!");
+    return;
+  }
+  
+  event.preventDefault();
+  btnEnviar.disabled = true;
+
+  var url="http://localhost:8090/api/contacto/guardar";
+  var data={"email": email.value, "mensaje": mensaje.value};
+
+  const response = await fetch(url, {
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    mode: 'cors', // no-cors, *cors, same-origin
+    cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'same-origin', // include, *same-origin, omit
+    headers: {
+       'Content-Type': 'application/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    redirect: 'follow', // manual, *follow, error
+    referrerPolicy: 'no-referrer-when-downgrade', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    body: JSON.stringify(data) // body data type must match "Content-Type" header
+  });
+
+  console.log(response.json());
+
+  if(response.ok){
+    alert("Se ha registrado correctamente tu email y mensaje.");
+  }else{
+    alert("Ocurrió un problema al realizar tu registro, Intenta mast tarde");
+  }
+} );
 
 function updateCovidData(){
     var url="https://covid-api.mmediagroup.fr/v1/cases"
