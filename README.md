@@ -44,3 +44,29 @@ Caso de estudio (parte 6) Reportando información con highcharts
 * https://www.chartjs.org 
 * https://covid-api.mmediagroup.fr/v1/cases 
 * https://jsonformatter.org
+
+Caso de estudio (parte 7) Reportando información con highmaps
+* **VIDEO:** https://www.youtube.com/watch?v=gzKGUghZb-0
+* https://www.highcharts.com/demo/maps
+* https://api.highcharts.com/highmaps/
+* https://jsfiddle.net/gh/get/jquery/1.11.0/highslide-software/highcharts.com/tree/master/samples/mapdata/countries/mx/mx-all
+* https://github.com/M-Media-Group/Covid-19-API
+* https://covid-api.mmediagroup.fr/v1/cases?country=Mexico
+* https://jsonformatter.org/
+* https://www.crystalreports.com/
+* https://community.jaspersoft.com/
+* https://selectpdf.com/community-edition/
+
+Caso de estudio (parte 8) Creando una API REST para el backend de registro de contactos
+* **VIDEO:** https://www.youtube.com/watch?v=EYoV3zrvnko
+* Script BD: https://drive.google.com/file/d/1rsukYSpw8Xobk-6q1dHa0YSU5rR4Sryn/view?usp=sharing
+* mysql-asíncrono: https://codeburst.io/node-js-mysql-and-async-await-6fb25b01b628
+* Info de la libreria de mysql: Info de libreria mysql: https://www.npmjs.com/package/mysql
+* Node.js: https://nodejs.org/es/
+
+Caso de estudio (parte 9) Conectando Front y Back End para de registro de contactos
+* **VIDEO:** https://www.youtube.com/watch?v=hWKY6kZ5B0Q
+* https://expressjs.com/es/advanced/best-practice-security.html
+* https://helmetjs.github.io/
+* https://davidinformatico.com/seguridad-express-js/
+
