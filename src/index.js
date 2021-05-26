@@ -1,6 +1,9 @@
+
+/*  REMOVER ESTE COMENTARIO PARA UTILIZAR WEBPACK
+
 //CSS a utilizar, pero que quede embebido.
 require('./index.css');
-
+*/
 
 var globalConfirmados = document.querySelector('#global-confirmados');
 var globalMuertos = document.querySelector('#global-muertos');
