@@ -1,0 +1,32 @@
+{
+  "name": "reporte-coronavirus",
+  "version": "1.0.0",
+  "description": "Proyecto de caso de estudio para mostrar información sobre el coronavirus, incluyendo consumo de servicios, animación CSS y javascript, visualización de datos y algunos aspectos de seguridad.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "dev": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fjml1983/reporte-coronavirus.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fjml1983/reporte-coronavirus/issues"
+  },
+  "homepage": "https://github.com/fjml1983/reporte-coronavirus#readme",
+  "devDependencies": {
+    "css-loader": "^5.2.6",
+    "html-webpack-plugin": "^5.3.1",
+    "javascript-obfuscator": "^2.13.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-obfuscator": "^3.3.1"
+  }
+}
