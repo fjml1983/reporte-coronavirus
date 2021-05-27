@@ -13,6 +13,16 @@ module.exports = {
             // More information here https://webpack.js.org/guides/asset-modules/
             type: "asset",
           },
+          { //configurar el loader de babel
+            test: /\.js$/,
+            exclude: /(node_modules|bower_components)/,
+            use: {
+              loader: 'babel-loader',
+              options: {
+                presets: ['@babel/preset-react']
+              }
+            }
+          }
         ],
     },  
     plugins: [

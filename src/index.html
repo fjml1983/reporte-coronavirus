@@ -2,76 +2,11 @@
 
 <html lang="en">
 <head>
+  <title>Reporte Coronavirus</title>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="index.css" rel="stylesheet">
-
 </head>
 <body>
-    <header>
-        <div class="virus virus-left"></div>
-        <h1 id="titulo-principal" >Reporte Coronavirus</h1>
-        <p id="subtitulo" >Una fuente r&aacute;pida de informaci&oacute;n sobre el COVID-19</p>
-        <div class="virus virus-right"></div>
-    </header>
-
-    <main class="row col-sm-1 col-md-1 col-2 container">
-        <article class="container">
-            <header>
-                <h2>A la fecha existen <span id="global-confirmados" ></span> de casos confirmados de Coronavirus alrededor del mundo.</h2>
-            </header>                
-            <!--Colocar aqu&iacute; mapa o grafico de reporte-->
-            <figure class="highcharts-figure">
-                <div id="grafico"></div>
-            </figure>            
-            <main>
-                <p>Desde la &uacute;ltima semana, se ha incrementado #,### casos en el mundo, o un #%</p>
-            </main>
-        </article>
-        <article class="container">
-            <header>
-                <h2><span id="global-muertos" ></span> personas han muerto por coronavirus</h2>
-            </header>
-            <!--Colocar aqu&iacute; mapa o grafico de reporte-->
-            <main>
-                <p>Esto representa un #% de tasa de mortalidad.  En comparaci&oacute;n, la tasa de mortalidad de la gripa estacional es tipicamente de alrededor de 0.1% en los Estados Unidos, de acuerdo al New York Times.</p>
-            </main>
-        </article>
-        <article class="container">
-            <header>
-                <h2>M&eacute;xico esta lidiando con <span id="mexico-activos" ></span> casos activos</h2>
-            </header>
-            <div id="container-map-mx"></div>
-            <main>
-                <p>#% de la poblaci&oacute;n tiene o ha tenido Coronavirus. Mas casos no reportados podr&iacute;an estar en casa enfermos. </p>
-            </main>
-        </article>
-    </main>
-
-    <footer class="row col-sm-1 col-md-2 col-2">
-        <section>
-            <h3>Reporte Coronavirus</h3>
-            <img src="coronavirus.png" width="64px">
-            <p>Un sitio informativo desarrollado en el ITSUR para la materia de Programación Web III</p>
-        </section>
-        <section>
-            <h5>Contáctanos</h5>
-            <form>
-                <label for="email" >Email</label>
-                <input type="email" id="email" name="email" placeholder="Tu email..." required minlength="8" />
-                
-                <label for="mensaje">Mensaje</label>
-                <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos algo..." required minlength="1" style="height: 100px ;" ></textarea>
-
-                <button id="btnEnviar" >Enviar</button>
-            </form>
-        </section>
-    </footer>
-
-    <!-- <script src="https://code.highcharts.com/highcharts.js"></script>-->
-    <script src="https://code.highcharts.com/maps/highmaps.js"></script>
-    <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/mapdata/countries/mx/mx-all.js"></script>
-
-    <script src="index.js"></script>
+    <div id='app'></div>
 </body>
 </html>
