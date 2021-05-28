@@ -70,3 +70,23 @@ Caso de estudio (parte 9) Conectando Front y Back End para de registro de contac
 * https://helmetjs.github.io/
 * https://davidinformatico.com/seguridad-express-js/
 
+Caso de estudio (parte 10) Empaquetando el Front End, mejora de desempeño y seguridad.
+* **VIDEO:** https://www.youtube.com/watch?v=uUzsWJ6OeMc
+* https://webpack.js.org/
+* https://webpack.js.org/guides/getting-started/
+* https://webpack.js.org/plugins/html-webpack-plugin/
+* https://webpack.js.org/loaders/css-loader/#assets
+* https://obfuscator.io/
+* https://github.com/javascript-obfuscator/webpack-obfuscator
+* https://www.npmjs.com/package/highcharts
+* https://www.npmjs.com/package/@highcharts/map-collection
+
+Caso de estudio (parte 11) Migrando el sitio hacia React.js
+Se migrar el proyecto hacia React.js (Revisar el branch 'react')
+* **VIDEO:** https://www.youtube.com/watch?v=YBIRb_Biggw
+* https://es.reactjs.org/
+* https://babeljs.io/
+* https://webpack.js.org/loaders/babel-loader/
+* https://www.highcharts.com/blog/tutorials/highcharts-wrapper-for-react-101/
+
+
